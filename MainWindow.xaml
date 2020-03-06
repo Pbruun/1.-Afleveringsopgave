@@ -1,0 +1,46 @@
+﻿<Window x:Class="WPF_Graded_Exercise.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Graded_Exercise"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Open" Click="btnOpenFile_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <Grid x:Name="gridOuter">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                
+            </Grid.ColumnDefinitions>
+
+            <ListBox x:Name="listBox" Grid.Row="0" Grid.RowSpan="4" Grid.Column="0" ItemsSource="{Binding Path=Users}" DisplayMemberPath="ListBoxToString" IsSynchronizedWithCurrentItem="True"></ListBox>
+
+            <TextBox x:Name="idTB" Grid.Row="0" Grid.Column="1" Text="{Binding Path=Id}"></TextBox>
+            <TextBox x:Name="nameTB" Grid.Row="1" Grid.Column="1" Text="{Binding Path=Name}"></TextBox>
+            <TextBox x:Name="ageTB" Grid.Row="2" Grid.Column="1" Text="{Binding Path=Age}"></TextBox>
+            <TextBox x:Name="scoreTB" Grid.Row="3" Grid.Column="1" Text="{Binding Path=Score}"></TextBox>
+
+            <Label x:Name="idLbl" Grid.Row="0" Grid.Column="2" Content="{Binding Path=Id}"></Label>
+            <Label x:Name="nameLbl" Grid.Row="1" Grid.Column="2" Content="{Binding Path=Name}"></Label>
+            <Label x:Name="ageLbl" Grid.Row="2" Grid.Column="2" Content="{Binding Path=Age}"></Label>
+            <Label x:Name="scoreLbl" Grid.Row="3" Grid.Column="2" Content="{Binding Path=Score}"></Label>
+            <Label x:Name="status" Grid.Row="4" Grid.Column="0" Content=""></Label>
+        </Grid>
+    </DockPanel>
+
+    
+</Window>
